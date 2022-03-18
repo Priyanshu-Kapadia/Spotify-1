@@ -17,6 +17,7 @@ export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
   Modal: undefined;
   NotFound: undefined;
+  AlbumScreen: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<
@@ -25,11 +26,39 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> = Nati
 >;
 
 export type RootTabParamList = {
-  TabOne: undefined;
+  HomeScreen: undefined;
+  AlbumScreen: undefined;
   TabTwo: undefined;
+  TabThree: undefined;
+  TabFour: undefined;
 };
+
+export type Albumtype = {
+  // id: string;
+  // imageUri: string;
+  // artistsHeadline: string;
+  id: string;
+  name: string;
+  by: string;
+  numberOfLikes: number;
+  imageUri: string;
+  artistsHeadline: string;
+}
+
+
+export type Song = {
+  id: string;
+  imageUri: string;
+  title: string;
+  artist: string;
+}
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
   BottomTabScreenProps<RootTabParamList, Screen>,
   NativeStackScreenProps<RootStackParamList>
 >;
+
+export type TabOneParamList = {
+  HomeScreen: undefined;
+  AlbumScreen: undefined;
+};
